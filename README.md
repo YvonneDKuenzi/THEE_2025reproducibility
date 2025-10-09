@@ -1,7 +1,10 @@
 # THEE_2024reproducibility
 This project was created by **Ana-Hermina Ghenu** for the reproducibility module of the Theoretical Ecology and Evolution research practical (Fall 2024)
 
-Learning objectives: 1. show reproducibility principles in action, 2. introduce students to the format & conventions of a GitHub repository.
+Learning objectives:
+
+1. show reproducibility principles in action,
+2. introduce students to the format & conventions of a GitHub repository.
  
 # Introduction
 A readme file is the first thing a collaborator will encounter when you share your project with them. Its purpose is to orient them to your project: brief but detailed!
