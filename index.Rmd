@@ -13,67 +13,83 @@ output:
   line-height: 1.6;
 }
 
-/* define colours used for action blocks & buttons */
+/* Increase vertical space before a new header */
+.section h1 {
+    padding-top: 50vh; /* units: % of vertical height of the browser window */
+  }
+
+/* Increase vertical space before a new header */
+.section h2 {
+    padding-top: 50vh; /* units: % of vertical height of the browser window */
+  }
+
+/* the source code is hard to see, let's make it bold */
+.sourceCode.r {
+  font-weight: bold;
+}
+
+/* define custom colours used for action blocks & buttons */
   :root {
     --action-color: #FFDF64;
     --action-contrast: #877b66;
   }
 </style>
 
+<div style="margin-top: -47vh;"></div>
 
 # Learning Goals
 
 - What is reproducibility and why should I care?
 
-- 4 habits for reproducible research\
+- 4 principles for reproducible research\
   *Bonus!:* some activities to refresh your R coding skills
 
 - Git and GitHub make it easy to track changes & collaborate
-\
-\
-\
+
+
 
 # What is Reproducibility? 
 
-Here we insert a slide deck explaining what is reproducibility
-\
-\
-\
+<div align="center">
+<iframe src="./slide_decks/reproducibility-intro/theSlides.html"
+        style="width: 80%; aspect-ratio: 4 / 3; border: 1px solid var(--action-contrast);"></iframe>
+</div>
 
-**Doing Research:**<p align="center">
-![](./figures/research_dream_reality.png){width=50%}
+<div style="margin-top: 3em;"></div>
+
+### Doing Research:
+
+<p align="center">
+![](./figures/research_dream_reality.png){width=80%}
 </p>
 
-That's okay! Having a **Data Management Plan** and good habits helps us get closer to the dream :)
-\
-\
-\
+### Having a **Data Management Plan** and good habits gets us closer to the ideal :)
+
+
+
 
 ## Doing reproducible research
 
 > **Goal:** being able to re-create the *data and analysis* so that you and others can (ideally) arrive at the *same interpretations* of your results.
 
-So, should we keep everything?
+<p style="font-size: 18px;">So, should we keep everything?</p>
 
-<p align="center">
+<div align="center">
 ![](https://med.stanford.edu/content/dam/sm-news/images/2009/10/sustain-freezer-101909.jpg){width=35%}
-</p>
+<p style="font-size: 24px; color: #333333;"> Nobody wants to deal with this!</p>
+</div>
 
 
-Nobody wants to deal with this!
-\
-\
-\
 
-# Habits for Reproducible Research
+# Reproducibility Principles
 
 > **Goal:** being able to re-create the *data and analysis* so that you and others can (ideally) arrive at the *same interpretations* of your results.
 
-~~Keep everything!~~
+#### ~~Keep everything!~~
 
-Keep *almost* everything in such a way that you, or people after you, can (happily?) go back to it.
+#### Keep *almost* everything in such a way that you, or people after you, can (happily?) go back to it.
 
-4 reproducibility principles for achieving this are:
+### 4 reproducibility principles for achieving this are:
 
 <ol> <!-- Force the numbering to be out of order -->
   <li value="1"> **Annotate:** explain what you're doing and why. </li>
@@ -81,45 +97,98 @@ Keep *almost* everything in such a way that you, or people after you, can (happi
   <li value="4"> **Share:** provide access to your work. </li>
   <li value="2"> **Hoard:** ... you will still have to keep *almost* everything ...</li>
 </ol>
-\
-\
-\
-\
-\
-\
+
+
 
 ## 1. Annotate <img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/1771/images/annotate.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" />
 
+### Write explanations for your future collaborators
 
-**Write explanations for your future collaborators**\
 What? How? *Why?!*
 
-**Habits:** use script headers, use meaningful & human-readable names, comment your code
+### Habits:
 
-**Tools:** notebook documents (e.g., R Notebook (.Rmd) files in RStudio)
+Use script headers, use meaningful & human-readable names, comment your code
+
+### Tools:
+
+notebook documents (e.g., R Notebook (.Rmd) files in RStudio)
+
+<div style="margin-top: 10vh;"></div>
 
 <div style="background-color: var(--action-color); padding: 20px;">
-### Time for Action: Annotate!
-Here we insert a slide deck with the activity
+
+#### Exercise 1.
+
+* Open RStudio and create a new R Notebook document.\
+
+<p align="center">
+![](./figures/ex1--open_notebook.png){width=50%}
+</p>
+
+* Save it, then Knit it to pdf. **What does this achieve?**
+
+<p align="center">
+![](./figures/ex1--knit_notebook.png){width=60%}
+</p>
+
+<div style="margin-top: 10vh;"></div>
+
+* Recall annotate habits: use meaningful & human-readable variable names, comment your code, use script headers.
+
+  - How do you achieve that?
+
+  - Type "# Annotate!" both *inside* and *outside* of the R code block.\
+  **How are these displayed differently after you knit?**
+  
+<p align="center">
+![](./figures/ex1--annotation.png){width=30%}
+</p>
+
+<div style="margin-top: 10vh;"></div>
+
+* Switch the markdown editing mode from Source to Visual.\
+What does this do? What new kinds of objects can you now add to your Notebook?
+
+<p align="center">
+![](./figures/ex1--visual_mode.png){width=50%}
+</p>
+
+<div style="margin-top: 10vh;"></div>
+
+* Modify the header to add new fields for "author:" and "date:"\
+What other authorship attribution information may be useful?
+
+<div style="margin-top: 20vh;"></div>
+
+<p align="center">
+![](./figures/ex1--header.png){width=80%}
+</p>
+
 </div>
-\
-\
-\
-
-## 2. Hoard <img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t3BbtzxyAYqbfzPrSXHDX3IeUrRhU1jPOjjOAkW9k0k8IoG8cmFmbm09_SFb0YM7BZrY6Ji_JDYu9zrZQh1PYXO43WmHGH8S04Ib6NHl5UvVru5mKRtas-k50qmohmAw=s0-d" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" />
 
 
-**Keep *almost* everything**
 
-**Habits:** backup regularly (daily!), versions of software & packages, store raw data & intermediate steps in data processing, store code & progress on code
 
-**Tools:** backup software (e.g., OneDrive is free for UniBE students),\
-version control (e.g., git), online repositories (e.g., GitHub)
+## 2. Automate <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/yo/f21e0c96-387b-4142-be2b-cb5da5fbc84f.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" />
 
+### Avoid manual manipulation
+
+waste of time & error-prone\
+decisions are <u>not</u> explicit and can be inconsistent
+
+### Habits:
+
+find+replace, use a scripting language for your analyses, automatically save parameters in the filename.
+
+### Tools:
+
+notebook documents (e.g., R Notebook)
 
 
 <div style="background-color: var(--action-color); padding: 20px;">
-### Time for Action: Hoard!
+
+#### Exercise 2.
 
 The window below contains a function (`get.multiples1to10`) that multiplies the integers from 1 to 10 (`1:10`) by a constant value (`multiplier`), which is currently set to `3`. So it should print out ten multiples of 3, from 3 to 30.
 
@@ -155,6 +224,8 @@ The window below contains a function (`get.multiples1to10`) that multiplies the 
 
 
 <div style="background-color: var(--action-color); padding: 20px;">
+
+#### Exercise 3.
 
 The window below contains a buggy version of the same code.
 
@@ -250,59 +321,114 @@ The window below contains a buggy version of the same code.
 
   </script>
 </div>
-\
-\
-\
 
-## 3. Automate <img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/yo/f21e0c96-387b-4142-be2b-cb5da5fbc84f.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" />
+<div style="margin-top: 10vh;"></div>
+
+<div style="background-color: var(--action-color); padding: 20px;">
+#### Exercise 4.
+
+Copy and paste the bug-free version of the code below into the R Notebook document that you created in Exercise 1.
+
+```r
+# function to multiply integers from 1 to 10 by a parameter value
+get.multiples1to10 <- function(multiplier){
+   numbers <- 1:10
+   return(multiplier * numbers)
+}
+
+# display results for parameter value set to 3
+current_value <- 3
+results <- get.multiples1to10(multiplier = current_value)
+
+# print results to console
+print(results)
+```
+
+**Use find+replace to change the name of the function from `get.multiples1to10` to a new name that you find more useful** (*e.g.,* easier to type, easier to understand, unique).
+</div>
 
 
-**Avoid manual manipulation**\
-waste of time & error-prone\
-decisions are <u>not</u> explicit and can be inconsistent
+## 3. Hoard <img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t3BbtzxyAYqbfzPrSXHDX3IeUrRhU1jPOjjOAkW9k0k8IoG8cmFmbm09_SFb0YM7BZrY6Ji_JDYu9zrZQh1PYXO43WmHGH8S04Ib6NHl5UvVru5mKRtas-k50qmohmAw=s0-d" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" />
 
-**Habits:** find+replace, use a scripting language for your analyses, automatically save parameters in the filename.
 
-**Tools:** notebook documents
+### Keep *almost* everything
 
-Here we insert a slide deck with the activity
-\
-\
-\
+### Habits:
+
+backup regularly (daily!), versions of software & packages, store raw data & intermediate steps in data processing, store code & progress on code
+
+### Tools:
+
+backup software (e.g., OneDrive is free for UniBE students),\
+version control (e.g., git), online repositories (e.g., GitHub)
+
+<div style="margin-top: 10vh;"></div>
+
+<div style="background-color: var(--action-color); padding: 20px;">
+#### Exercise 5.
+
+It is usually a better idea to print your results to a file rather than to the console. (Why?)
+
+Return to the R Notebook that you last updated in Exercise 4.\
+Use this line of code to print your `results` to a comma separated values (.csv) file called "myResuts.csv":
+
+```r
+write.csv(results, filename = "myResults.csv", row.names = FALSE)
+```
+
+Do you think this is a good filename for your results? **Why or why not?**
+
+You can store the parameter value in the filename by first using `paste(...)` to create a character string called `the_filename`.
+
+```r
+the_filename <- paste("multiples1to10--multiplier", current_value, ".csv")
+```
+
+Use `the_filename` to print your results to a csv file.
+
+Do you think this is a better filename for your results? **Why or why not?**
+
+</div>
+
+
+
 
 ## 4. Share <img src="https://assets.myket.ir/icons/large/com.appattitude.shareapp_f6f6c04e-10fb-4303-a952-0e783d3bfb38.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" />
 
+### Fundamentally, research is about sharing
 
-**Fundamentally, research is about sharing**\
 with collaborators, with other scientists
 
-**Habits:** think about your <u>audience</u> when analyzing (see annotate), share early and often
+### Habits:
 
-**Tools:** online repositories for data (e.g., Dryad), code (e.g., GitHub), and papers (e.g., EcoEvoRxiv)
-\
-\
-\
-\
-\
-\
+think about your <u>audience</u> when analyzing (see annotate), share early and often
 
-## Reproducibility principles
+### Tools:
+
+online repositories for data (e.g., Dryad), code (e.g., GitHub), and papers (e.g., EcoEvoRxiv)
+
+
+## Summary
 
   - **Annotate:** explain what you're doing and why.
   - **Automate:** make your decisions explicit by using code.
-  - **Share:** provide access to your work.
   - **Hoard:** keep *almost* everything.
+  - **Share:** provide access to your work.
 
-By implementing these reproducibility principles, your workspace can be more like this:
+#### By implementing these reproducibility principles, your workspace can be more like this:
 
 <p align="center">
 ![](https://assets.fishersci.com/TFS-Assets/CCG/product-images/F205638~p.eps-650.jpg){width=35%}
 </p>
 
-Here we insert a slide deck with the review.
-\
-\
-\
+<div style="margin-top: 10vh;"></div>
+
+<div align="center">
+<iframe src="./slide_decks/reproducibility-concl/theSlides.html"
+        style="width: 80%; aspect-ratio: 4 / 3; border: 1px solid var(--action-contrast);"></iframe>
+</div>
+
+
 
 # Intro to Git(Hub)
 

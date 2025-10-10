@@ -4,7 +4,9 @@ author: "Hermina & < write your name here :) >"
 date: "Last compiled on `r format(Sys.time(), '%d %B %Y')`"
 ---
 
-Attribution: this code is modified from `reproducibility.Rmd`. Indicate here if you used ChatGPT or other AI tools to help you write the code.
+Attribution: this code is modified from `reproducibility.Rmd`.
+Indicate here if you used ChatGPT or other AI tools to help you write the code.
+
 
 
 # Introduction
@@ -69,5 +71,3 @@ filename <- paste("numbers_1_to_10--multiplier", current_multiplier,".csv")
 # print results to output
 write.csv(results, filename, row.names = FALSE)
 ```
-
-

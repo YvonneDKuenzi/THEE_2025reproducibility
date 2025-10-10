@@ -1,0 +1,293 @@
+---
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - rladies
+      - rladies-fonts
+      - css/rladies-mod.css
+      - action_colours.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+<div style="margin-top: -30px;"></div>
+
+# Research practices:
+
+<div style="margin-top: -20px;"></div>
+
+## Reproducibility
+<div style="margin-top: 109px;"></div>
+
+
+## Repeatability
+<div style="margin-top: 83px;"></div>
+
+
+## Generalizability
+
+???
+Use "p" to see these presenter notes.
+Use "h" to see other hotkeys.
+
+Ask the class: What do you think these 3 terms mean in the context of doing research? How might they be different or similar?
+
+Incorporating interactivity early sets the stage for an interactive afternoon!
+
+---
+
+<div style="margin-top: -30px;"></div>
+
+# Research practices:
+
+<div style="margin-top: -20px;"></div>
+
+## Reproducibility:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists re-analyze your data to get the same result?
+<div style="margin-top: 88px;"></div>
+
+
+## Repeatability:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists replicate your same experiment to get a consistent result?
+<div style="margin-top: 61px;"></div>
+
+
+## Generalizability:
+<div style="margin-top: -40px;"></div>
+
+Do other studies exploring the same research question come to the consistent conclusions?
+
+.footnote[
+
+
+----
+
+[National Academies of Science, Engineering, Medicine 2019](https://www.ncbi.nlm.nih.gov/books/NBK547546/)
+]
+
+---
+
+background-image: url(img/triangle.png)
+background-size: 85%       
+background-position: top right 
+background-repeat: no-repeat  
+
+<div style="margin-top: -30px;"></div>
+
+# Research practices:
+
+<div style="margin-top: -20px;"></div>
+
+## Reproducibility:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists re-analyze your data to get the same result?
+<div style="margin-top: 88px;"></div>
+
+
+## Repeatability:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists replicate your same experiment to get a consistent result?
+<div style="margin-top: 61px;"></div>
+
+
+## Generalizability:
+<div style="margin-top: -40px;"></div>
+
+Do other studies exploring the same research question come to the consistent conclusions?
+
+.footnote[
+
+
+----
+
+[National Academies of Science, Engineering, Medicine 2019](https://www.ncbi.nlm.nih.gov/books/NBK547546/)
+]
+
+???
+
+Generalizability is our big goal: we achieve it by breaking it down into smaller pieces
+
+---
+
+background-image: url(img/triangle.png)
+background-size: 85%       
+background-position: top right 
+background-repeat: no-repeat  
+
+<div style="margin-top: -30px;"></div>
+
+# Research practices:
+
+<div style="margin-top: -20px;"></div>
+
+## Reproducibility:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists re-analyze your data to get the same result?
+<div style="margin-top: -20px;"></div>
+
+* first line of defense in creating repeatable research 
+* focused on computational or data analysis 👩🏾‍💻
+
+## Repeatability:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists replicate your same experiment to get a consistent result?
+<div style="margin-top: -20px;"></div>
+
+* from initial experimental set-up to final results 
+
+## Generalizability:
+<div style="margin-top: -40px;"></div>
+
+Do other studies exploring the same research question come to the consistent conclusions?
+<div style="margin-top: -20px;"></div>
+
+* the ✨ideal ✨  we strive for in our science
+
+.footnote[
+
+
+----
+
+[National Academies of Science, Engineering, Medicine 2019](https://www.ncbi.nlm.nih.gov/books/NBK547546/)
+]
+
+
+---
+
+background-image: url(img/triangle.png)
+background-size: 85%       
+background-position: top right 
+background-repeat: no-repeat  
+
+<div style="margin-top: -30px;"></div>
+
+# Research practices:
+
+<div style="margin-top: -20px;"></div>
+
+## Reproducibility:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists<sup>1</sup> re-analyze your data to get the same result?
+<div style="margin-top: -20px;"></div>
+
+* first line of defense in creating repeatable research 
+* focused on computational or data analysis 👩🏾‍💻
+
+## Repeatability:
+<div style="margin-top: -40px;"></div>
+
+Can other scientists<sup>1</sup> replicate your same experiment to get a consistent result?
+<div style="margin-top: -20px;"></div>
+
+* from initial experimental set-up to final results 
+
+## Generalizability:
+<div style="margin-top: -40px;"></div>
+
+Do other studies exploring the same research question come to the consistent conclusions?
+<div style="margin-top: -20px;"></div>
+
+* the ✨ideal ✨  we strive for in our science
+
+.footnote[
+[1] or *future you*: your most important collaborator!
+
+----
+
+[National Academies of Science, Engineering, Medicine 2019](https://www.ncbi.nlm.nih.gov/books/NBK547546/)
+]
+
+???
+
+Common experience of knowing exactly how your code works today, but forgetting in a week (or even a day)
+
+
+---
+
+class: middle, center, action_slide
+
+## What are some other reasons why we might need Reproducibility, Repeatability, & Generalizability?
+
+???
+
+Slides with this format are used to facilitate discussion or activities (i.e., action/interactivity in the class)
+
+---
+
+<div style="margin-top: -30px;"></div>
+
+### Why we need reproducible & generalizable research practices
+
+#### Reproducible research creates trusted scientific contributions
+
+> &gt;85% of ecology & evolution articles are *not* reproducible (*e.g.*, no code)
+
+<div style="text-align: right; margin-top: -25px;">
+  <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0300333">
+    (Kambouris <i>et al.,</i> 2024)
+  </a>
+  </div>
+
+> Articles that make their data & code available tend to be cited more
+
+<div style="text-align: right; margin-top: -25px;">
+  <a href="https://onlinelibrary.wiley.com/doi/10.1002/ece3.70030">
+    (Maitner <i>et al.,</i> 2024)
+  </a>
+</div>
+
+
+#### Nature can be more complex than we imagined
+
+> *e.g.*, animal behavioral responses depend on their housing & handling
+
+<div style="text-align: right; margin-top: -25px;">
+  <a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2022.835444/full">
+    (Nigri <i>et al.,</i> 2022)
+  </a> 
+</div>
+
+#### Mistakes in research can have social & economic impacts
+
+> *e.g.*, impoverished environment of mice in preclinical studies may explain why most new drug candidates do not work as expected in clinical trials.
+
+<div style="text-align: right; margin-top: -25px;">
+  <a href="https://www.nature.com/articles/s41380-022-01913-z">
+    (Shemesh & Chen 2023)
+  </a> 
+</div>
+
+#### Bad faith actors can diminish our trust in science
+<div style="text-align: right; margin-top: -35px;">
+  <a href="https://www.nature.com/articles/d41586-022-02156-2">
+    (Kozlov 2022;
+  </a> 
+  <a href="https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/">
+    data forensics details)
+  </a>
+</div>
+
+#### Consistent methods for globally coordinated research efforts
+<div style="text-align: right; margin-top: -25px;">
+  <a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30542-8/fulltext">
+    <i>e.g.,</i> in combating disease (Park <i>et al.,</i> 2021)
+  </a> 
+  <a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13331">
+    or climate change (Halbritter <i>et al.,</i> 2019)
+  </a>
+</div>
+

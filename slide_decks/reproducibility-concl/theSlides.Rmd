@@ -1,0 +1,57 @@
+---
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - rladies
+      - rladies-fonts
+      - css/rladies-mod.css
+      - action_colours.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+class: middle, action_slide
+
+# Review of what we learned ...
+
+--
+
+* What is reproducibility?
+
+--
+
+* Why do you have to annotate your code?
+
+--
+
+  - What are some useful habits for annotating?
+
+???
+
+Annotate habits: script headers, meaningful & human-readable names, commenting
+
+--
+
+* Why do we ask you to hand in your code?
+
+--
+
+  - What are some useful habits for automating?
+
+???
+
+Automate habits: find+replace, scripting language for analyses, automatically save parameters in filename.
+
+--
+
+  - What are some useful habits for hoarding?
+
+???
+
+Hoard habits: regular backups, versions of software & packages, store raw data & intermediate steps in data processing, store code & progress on code

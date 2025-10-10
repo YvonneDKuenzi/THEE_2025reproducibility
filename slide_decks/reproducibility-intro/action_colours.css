@@ -1,0 +1,13 @@
+.action_slide {
+  background-color: #FFDF64;
+  color: #000000;
+}
+
+.action_slide h1,
+.action_slide h2,
+.action_slide h3,
+.action_slide h4,
+.action_slide h5,
+.action_slide h6 {
+  color: #000000;
+}

@@ -47,6 +47,107 @@
 
 
 
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -344,41 +445,62 @@ div.tocify {
   line-height: 1.6;
 }
 
-/* define colours used for action blocks & buttons */
+/* Increase vertical space before a new header */
+.section h1 {
+    padding-top: 50vh; /* units: % of vertical height of the browser window */
+  }
+
+/* Increase vertical space before a new header */
+.section h2 {
+    padding-top: 50vh; /* units: % of vertical height of the browser window */
+  }
+
+/* the source code is hard to see, let's make it bold */
+.sourceCode.r {
+  font-weight: bold;
+}
+
+/* define custom colours used for action blocks & buttons */
   :root {
     --action-color: #FFDF64;
     --action-contrast: #877b66;
   }
 </style>
+<div style="margin-top: -47vh;">
+
+</div>
 <div id="learning-goals" class="section level1">
 <h1>Learning Goals</h1>
 <ul>
 <li><p>What is reproducibility and why should I care?</p></li>
-<li><p>4 habits for reproducible research<br />
+<li><p>4 principles for reproducible research<br />
 <em>Bonus!:</em> some activities to refresh your R coding
 skills</p></li>
 <li><p>Git and GitHub make it easy to track changes &amp;
-collaborate<br />
-<br />
-<br />
-</p></li>
+collaborate</p></li>
 </ul>
 </div>
 <div id="what-is-reproducibility" class="section level1">
 <h1>What is Reproducibility?</h1>
-<p>Here we insert a slide deck explaining what is reproducibility<br />
-<br />
-<br />
-</p>
-<strong>Doing Research:</strong>
+<div align="center">
+<iframe src="./slide_decks/reproducibility-intro/theSlides.html" style="width: 80%; aspect-ratio: 4 / 3; border: 1px solid var(--action-contrast);">
+</iframe>
+</div>
+<div style="margin-top: 3em;">
+
+</div>
+<div id="doing-research" class="section level3">
+<h3>Doing Research:</h3>
 <p align="center">
-<img src="figures/research_dream_reality.png" style="width:50.0%" />
+<img src="figures/research_dream_reality.png" style="width:80.0%" />
 </p>
-<p>That’s okay! Having a <strong>Data Management Plan</strong> and good
-habits helps us get closer to the dream :)<br />
-<br />
-<br />
-</p>
+</div>
+<div
+id="having-a-data-management-plan-and-good-habits-gets-us-closer-to-the-ideal"
+class="section level3">
+<h3>Having a <strong>Data Management Plan</strong> and good habits gets
+us closer to the ideal :)</h3>
+</div>
 <div id="doing-reproducible-research" class="section level2">
 <h2>Doing reproducible research</h2>
 <blockquote>
@@ -386,29 +508,38 @@ habits helps us get closer to the dream :)<br />
 analysis</em> so that you and others can (ideally) arrive at the
 <em>same interpretations</em> of your results.</p>
 </blockquote>
-<p>So, should we keep everything?</p>
-<p align="center">
+<p style="font-size: 18px;">
+So, should we keep everything?
+</p>
+<div align="center">
 <img
 src="https://med.stanford.edu/content/dam/sm-news/images/2009/10/sustain-freezer-101909.jpg"
 style="width:35.0%" />
-</p>
-<p>Nobody wants to deal with this!<br />
-<br />
-<br />
+<p style="font-size: 24px; color: #333333;">
+Nobody wants to deal with this!
 </p>
 </div>
 </div>
-<div id="habits-for-reproducible-research" class="section level1">
-<h1>Habits for Reproducible Research</h1>
+</div>
+<div id="reproducibility-principles" class="section level1">
+<h1>Reproducibility Principles</h1>
 <blockquote>
 <p><strong>Goal:</strong> being able to re-create the <em>data and
 analysis</em> so that you and others can (ideally) arrive at the
 <em>same interpretations</em> of your results.</p>
 </blockquote>
-<p><del>Keep everything!</del></p>
-<p>Keep <em>almost</em> everything in such a way that you, or people
-after you, can (happily?) go back to it.</p>
-<p>4 reproducibility principles for achieving this are:</p>
+<div id="keep-everything" class="section level4">
+<h4><del>Keep everything!</del></h4>
+</div>
+<div
+id="keep-almost-everything-in-such-a-way-that-you-or-people-after-you-can-happily-go-back-to-it."
+class="section level4">
+<h4>Keep <em>almost</em> everything in such a way that you, or people
+after you, can (happily?) go back to it.</h4>
+</div>
+<div id="reproducibility-principles-for-achieving-this-are"
+class="section level3">
+<h3>4 reproducibility principles for achieving this are:</h3>
 <ol>
 <!-- Force the numbering to be out of order -->
 <li value="1">
@@ -425,46 +556,106 @@ after you, can (happily?) go back to it.</p>
 everything …
 </li>
 </ol>
-<p><br />
-<br />
-<br />
-<br />
-<br />
-<br />
-</p>
+</div>
 <div id="annotate" class="section level2">
 <h2>1. Annotate
 <img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/1771/images/annotate.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" /></h2>
-<p><strong>Write explanations for your future
-collaborators</strong><br />
-What? How? <em>Why?!</em></p>
-<p><strong>Habits:</strong> use script headers, use meaningful &amp;
-human-readable names, comment your code</p>
-<p><strong>Tools:</strong> notebook documents (e.g., R Notebook (.Rmd)
-files in RStudio)</p>
-<div id="time-for-action-annotate" class="section level3"
-style="background-color: var(--action-color); padding: 20px;">
-<h3>Time for Action: Annotate!</h3>
-<p>Here we insert a slide deck with the activity</p>
+<div id="write-explanations-for-your-future-collaborators"
+class="section level3">
+<h3>Write explanations for your future collaborators</h3>
+<p>What? How? <em>Why?!</em></p>
 </div>
-<p><br />
-<br />
-<br />
+<div id="habits" class="section level3">
+<h3>Habits:</h3>
+<p>Use script headers, use meaningful &amp; human-readable names,
+comment your code</p>
+</div>
+<div id="tools" class="section level3">
+<h3>Tools:</h3>
+<p>notebook documents (e.g., R Notebook (.Rmd) files in RStudio)</p>
+<div style="margin-top: 10vh;">
+
+</div>
+<div id="exercise-1." class="section level4"
+style="background-color: var(--action-color); padding: 20px;">
+<h4>Exercise 1.</h4>
+<ul>
+<li>Open RStudio and create a new R Notebook document.<br />
+</li>
+</ul>
+<p align="center">
+<img src="figures/ex1--open_notebook.png" style="width:50.0%" />
+</p>
+<ul>
+<li>Save it, then Knit it to pdf. <strong>What does this
+achieve?</strong></li>
+</ul>
+<p align="center">
+<img src="figures/ex1--knit_notebook.png" style="width:60.0%" />
+</p>
+<div style="margin-top: 10vh;">
+
+</div>
+<ul>
+<li><p>Recall annotate habits: use meaningful &amp; human-readable
+variable names, comment your code, use script headers.</p>
+<ul>
+<li><p>How do you achieve that?</p></li>
+<li><p>Type “# Annotate!” both <em>inside</em> and <em>outside</em> of
+the R code block.<br />
+<strong>How are these displayed differently after you
+knit?</strong></p></li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/ex1--annotation.png" style="width:30.0%" />
+</p>
+<div style="margin-top: 10vh;">
+
+</div>
+<ul>
+<li>Switch the markdown editing mode from Source to Visual.<br />
+What does this do? What new kinds of objects can you now add to your
+Notebook?</li>
+</ul>
+<p align="center">
+<img src="figures/ex1--visual_mode.png" style="width:50.0%" />
+</p>
+<div style="margin-top: 10vh;">
+
+</div>
+<ul>
+<li>Modify the header to add new fields for “author:” and “date:”<br />
+What other authorship attribution information may be useful?</li>
+</ul>
+<div style="margin-top: 20vh;">
+
+</div>
+<p align="center">
+<img src="figures/ex1--header.png" style="width:80.0%" />
 </p>
 </div>
-<div id="hoard" class="section level2">
-<h2>2. Hoard
-<img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t3BbtzxyAYqbfzPrSXHDX3IeUrRhU1jPOjjOAkW9k0k8IoG8cmFmbm09_SFb0YM7BZrY6Ji_JDYu9zrZQh1PYXO43WmHGH8S04Ib6NHl5UvVru5mKRtas-k50qmohmAw=s0-d" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" /></h2>
-<p><strong>Keep <em>almost</em> everything</strong></p>
-<p><strong>Habits:</strong> backup regularly (daily!), versions of
-software &amp; packages, store raw data &amp; intermediate steps in data
-processing, store code &amp; progress on code</p>
-<p><strong>Tools:</strong> backup software (e.g., OneDrive is free for
-UniBE students),<br />
-version control (e.g., git), online repositories (e.g., GitHub)</p>
-<div id="time-for-action-hoard" class="section level3"
+</div>
+</div>
+<div id="automate" class="section level2">
+<h2>2. Automate
+<img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/yo/f21e0c96-387b-4142-be2b-cb5da5fbc84f.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" /></h2>
+<div id="avoid-manual-manipulation" class="section level3">
+<h3>Avoid manual manipulation</h3>
+<p>waste of time &amp; error-prone<br />
+decisions are <u>not</u> explicit and can be inconsistent</p>
+</div>
+<div id="habits-1" class="section level3">
+<h3>Habits:</h3>
+<p>find+replace, use a scripting language for your analyses,
+automatically save parameters in the filename.</p>
+</div>
+<div id="tools-1" class="section level3">
+<h3>Tools:</h3>
+<p>notebook documents (e.g., R Notebook)</p>
+<div id="exercise-2." class="section level4"
 style="background-color: var(--action-color); padding: 20px;">
-<h3>Time for Action: Hoard!</h3>
+<h4>Exercise 2.</h4>
 <p>The window below contains a function
 (<code>get.multiples1to10</code>) that multiplies the integers from 1 to
 10 (<code>1:10</code>) by a constant value (<code>multiplier</code>),
@@ -491,7 +682,9 @@ Please reload the original code! </button>
   </script>
 <p><br></p>
 </div>
-<div style="background-color: var(--action-color); padding: 20px;">
+<div id="exercise-3." class="section level4"
+style="background-color: var(--action-color); padding: 20px;">
+<h4>Exercise 3.</h4>
 <p>The window below contains a buggy version of the same code.</p>
 <p><strong>Find the bug and fix it so the code runs
 properly.</strong></p>
@@ -578,61 +771,120 @@ I fixed it :D Now give me a new bug to fix! </button></p>
 
   </script>
 </div>
-<p><br />
-<br />
-<br />
-</p>
+<div style="margin-top: 10vh;">
+
 </div>
-<div id="automate" class="section level2">
-<h2>3. Automate
-<img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/yo/f21e0c96-387b-4142-be2b-cb5da5fbc84f.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" /></h2>
-<p><strong>Avoid manual manipulation</strong><br />
-waste of time &amp; error-prone<br />
-decisions are <u>not</u> explicit and can be inconsistent</p>
-<p><strong>Habits:</strong> find+replace, use a scripting language for
-your analyses, automatically save parameters in the filename.</p>
-<p><strong>Tools:</strong> notebook documents</p>
-<p>Here we insert a slide deck with the activity<br />
-<br />
-<br />
-</p>
+<div id="exercise-4." class="section level4"
+style="background-color: var(--action-color); padding: 20px;">
+<h4>Exercise 4.</h4>
+<p>Copy and paste the bug-free version of the code below into the R
+Notebook document that you created in Exercise 1.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># function to multiply integers from 1 to 10 by a parameter value</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>get.multiples1to10 <span class="ot">&lt;-</span> <span class="cf">function</span>(multiplier){</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>   numbers <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>   <span class="fu">return</span>(multiplier <span class="sc">*</span> numbers)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="co"># display results for parameter value set to 3</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>current_value <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">get.multiples1to10</span>(<span class="at">multiplier =</span> current_value)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="co"># print results to console</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="fu">print</span>(results)</span></code></pre></div>
+<p><strong>Use find+replace to change the name of the function from
+<code>get.multiples1to10</code> to a new name that you find more
+useful</strong> (<em>e.g.,</em> easier to type, easier to understand,
+unique).</p>
+</div>
+</div>
+</div>
+<div id="hoard" class="section level2">
+<h2>3. Hoard
+<img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t3BbtzxyAYqbfzPrSXHDX3IeUrRhU1jPOjjOAkW9k0k8IoG8cmFmbm09_SFb0YM7BZrY6Ji_JDYu9zrZQh1PYXO43WmHGH8S04Ib6NHl5UvVru5mKRtas-k50qmohmAw=s0-d" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" /></h2>
+<div id="keep-almost-everything" class="section level3">
+<h3>Keep <em>almost</em> everything</h3>
+</div>
+<div id="habits-2" class="section level3">
+<h3>Habits:</h3>
+<p>backup regularly (daily!), versions of software &amp; packages, store
+raw data &amp; intermediate steps in data processing, store code &amp;
+progress on code</p>
+</div>
+<div id="tools-2" class="section level3">
+<h3>Tools:</h3>
+<p>backup software (e.g., OneDrive is free for UniBE students),<br />
+version control (e.g., git), online repositories (e.g., GitHub)</p>
+<div style="margin-top: 10vh;">
+
+</div>
+<div id="exercise-5." class="section level4"
+style="background-color: var(--action-color); padding: 20px;">
+<h4>Exercise 5.</h4>
+<p>It is usually a better idea to print your results to a file rather
+than to the console. (Why?)</p>
+<p>Return to the R Notebook that you last updated in Exercise 4.<br />
+Use this line of code to print your <code>results</code> to a comma
+separated values (.csv) file called “myResuts.csv”:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">write.csv</span>(results, <span class="at">filename =</span> <span class="st">&quot;myResults.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>Do you think this is a good filename for your results? <strong>Why or
+why not?</strong></p>
+<p>You can store the parameter value in the filename by first using
+<code>paste(...)</code> to create a character string called
+<code>the_filename</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>the_filename <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;multiples1to10--multiplier&quot;</span>, current_value, <span class="st">&quot;.csv&quot;</span>)</span></code></pre></div>
+<p>Use <code>the_filename</code> to print your results to a csv
+file.</p>
+<p>Do you think this is a better filename for your results? <strong>Why
+or why not?</strong></p>
+</div>
+</div>
 </div>
 <div id="share" class="section level2">
 <h2>4. Share
 <img src="https://assets.myket.ir/icons/large/com.appattitude.shareapp_f6f6c04e-10fb-4303-a952-0e783d3bfb38.png" class="toc-icon" style="float: right; width: 25%; margin-left: 10px;" /></h2>
-<p><strong>Fundamentally, research is about sharing</strong><br />
-with collaborators, with other scientists</p>
-<p><strong>Habits:</strong> think about your <u>audience</u> when
-analyzing (see annotate), share early and often</p>
-<p><strong>Tools:</strong> online repositories for data (e.g., Dryad),
-code (e.g., GitHub), and papers (e.g., EcoEvoRxiv)<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-</p>
+<div id="fundamentally-research-is-about-sharing"
+class="section level3">
+<h3>Fundamentally, research is about sharing</h3>
+<p>with collaborators, with other scientists</p>
 </div>
-<div id="reproducibility-principles" class="section level2">
-<h2>Reproducibility principles</h2>
+<div id="habits-3" class="section level3">
+<h3>Habits:</h3>
+<p>think about your <u>audience</u> when analyzing (see annotate), share
+early and often</p>
+</div>
+<div id="tools-3" class="section level3">
+<h3>Tools:</h3>
+<p>online repositories for data (e.g., Dryad), code (e.g., GitHub), and
+papers (e.g., EcoEvoRxiv)</p>
+</div>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
 <ul>
 <li><strong>Annotate:</strong> explain what you’re doing and why.</li>
 <li><strong>Automate:</strong> make your decisions explicit by using
 code.</li>
-<li><strong>Share:</strong> provide access to your work.</li>
 <li><strong>Hoard:</strong> keep <em>almost</em> everything.</li>
+<li><strong>Share:</strong> provide access to your work.</li>
 </ul>
-<p>By implementing these reproducibility principles, your workspace can
-be more like this:</p>
+<div
+id="by-implementing-these-reproducibility-principles-your-workspace-can-be-more-like-this"
+class="section level4">
+<h4>By implementing these reproducibility principles, your workspace can
+be more like this:</h4>
 <p align="center">
 <img
 src="https://assets.fishersci.com/TFS-Assets/CCG/product-images/F205638~p.eps-650.jpg"
 style="width:35.0%" />
 </p>
-<p>Here we insert a slide deck with the review.<br />
-<br />
-<br />
-</p>
+<div style="margin-top: 10vh;">
+
+</div>
+<div align="center">
+<iframe src="./slide_decks/reproducibility-concl/theSlides.html" style="width: 80%; aspect-ratio: 4 / 3; border: 1px solid var(--action-contrast);">
+</iframe>
+</div>
+</div>
 </div>
 </div>
 <div id="intro-to-github" class="section level1">
