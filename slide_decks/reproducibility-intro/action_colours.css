@@ -3,6 +3,10 @@
   color: #000000;
 }
 
+.remark-slide-number {
+  display: none;
+}
+
 .action_slide h1,
 .action_slide h2,
 .action_slide h3,

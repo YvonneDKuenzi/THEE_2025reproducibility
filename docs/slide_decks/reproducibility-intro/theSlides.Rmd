@@ -272,7 +272,7 @@ Slides with this format are used to facilitate discussion or activities (i.e., a
 </div>
 
 #### Bad faith actors can diminish our trust in science
-<div style="text-align: right; margin-top: -35px;">
+<div style="text-align: right; margin-top: -33px;">
   <a href="https://www.nature.com/articles/d41586-022-02156-2">
     (Kozlov 2022;
   </a> 
