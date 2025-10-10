@@ -2,6 +2,8 @@
 
 This branch hosts the (website used for the THEE reproducibility module) [https://evonerd.github.io/THEE_2025reproducibility/aboutTHEE.html]).
 
+*Note: the **main branch** is used during the module to train students on version control, efficient collaboration, and managing conflicts via Git(Hub).*
+
 # Purpose
 
 Having the slides and exercises on GitHub Pages makes it easy for students to access and allows the module to be reproducibly passed down to the next instructor(s).
