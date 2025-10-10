@@ -1,7 +1,7 @@
 # THEE_2025reproducibility
 This project was created by **Ana-Hermina Ghenu** for the reproducibility module of the Theoretical Ecology and Evolution research practical (Fall 2024).
 
-The live website for 2025 is at [this website.](https://evonerd.github.io/THEE_2025reproducibility/index.html)
+The live website for 2025 is at [this link.](https://evonerd.github.io/THEE_2025reproducibility/index.html)
 
 Learning objectives:
 
