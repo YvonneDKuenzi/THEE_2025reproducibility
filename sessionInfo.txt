@@ -1,0 +1,21 @@
+R version 4.4.3 (2025-02-28 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26100)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=English_Switzerland.utf8  LC_CTYPE=English_Switzerland.utf8    LC_MONETARY=English_Switzerland.utf8
+[4] LC_NUMERIC=C                         LC_TIME=English_Switzerland.utf8    
+
+time zone: Europe/Zurich
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] compiler_4.4.3    fastmap_1.2.0     cli_3.6.4         rsconnect_1.3.4   htmltools_0.5.8.1 tools_4.4.3      
+ [7] rstudioapi_0.17.1 xaringan_0.31     yaml_2.3.10       rmarkdown_2.29    knitr_1.50        xfun_0.51        
+[13] digest_0.6.37     lifecycle_1.0.4   rlang_1.1.5       evaluate_1.0.3  
