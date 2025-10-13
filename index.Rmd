@@ -18,7 +18,7 @@ An interactive 3-hour module demonstrating reproducibility principles for best r
 - 4 principles for reproducible research: annotate, automate, hoard, share\
   *Bonus!:* some activities to refresh your R coding skills
 
-#### [I want to learn about reproducibility](reproducibility_half.html)
+#### [I want to learn about Reproducibility](reproducibility_half.html)
 
 <br>
 <br>

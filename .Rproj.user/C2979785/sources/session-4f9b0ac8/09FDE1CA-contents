@@ -468,12 +468,14 @@ online repositories for data (e.g., Dryad), code (e.g., [GitHub](github_half.htm
 We will learn how to use Git and GitHub in [the second half of the module.](github_half.html)
 
 
-## Summary
+# Summary
 
   - **Annotate:** explain what you're doing and why.
   - **Automate:** make your decisions explicit by using code.
   - **Hoard:** keep *almost* everything.
   - **Share:** provide access to your work.
+
+<br>
 
 #### By implementing these reproducibility principles, your workspace can be more like this:
 
