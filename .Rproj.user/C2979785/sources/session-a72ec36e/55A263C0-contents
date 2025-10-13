@@ -486,3 +486,17 @@ online repositories for data (e.g., Dryad), code (e.g., GitHub), and papers (e.g
 
 # Intro to Git(Hub)
 
+
+## Version control
+
+Keeping track of changes to documents:
+
+<div align="center">
+![](https://swcarpentry.github.io/git-novice/fig/phd101212s.png){width=35%}
+</div>
+
+Programs can do this automatically for us (e.g., Google docs).
+
+### GitHug
+
+
