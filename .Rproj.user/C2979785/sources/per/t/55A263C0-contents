@@ -504,29 +504,30 @@ Programs can do this automatically for us (e.g., Google docs).
 ![](https://swcarpentry.github.io/git-novice/fig/play-changes.svg){width=90%}
 </div>
 
-Tracks changes to all files and subfolders contained in the **repository** (which is just the parent folder).
 
-For text files, lets you see line-by-line changes:\
+<p style="font-size: 18px;">Git tracks changes to all files and subfolders contained in the **repository** (which is just the parent folder).</p>
+
+For text files, Git lets you see line-by-line changes:\
 
 <p align="center">
 ![](./figures/git_change_to_text_file.png){width=35%}
 </p>
 
-For non-text files, indicates that files were changed:\
+For non-text files, Git indicates that files were changed:\
 
 <p align="center">
 ![](./figures/git_change_to_nontext_file.png){width=50%}
 </p>
 
-Can be used locally on your computer\
-**AND**
-Can be synchronized with a server so that data & its changes are backed up to the cloud.
+> Git can be used locally on your computer\
+> &nbsp;&nbsp;&nbsp; **AND**\
+> Git can be synchronized with a server so that data & changes are backed up to the cloud.
 
 ## Using Git Locally
 
-Git can be run via command line but we will use GitHub Desktop.
+Git can be run via command line ([see tutorial here](https://swcarpentry.github.io/git-novice/01-basics.html)) but we will use GitHub Desktop.
 
-<div style="background-color: var(--action-color); padding: 20px;">
+<div style="background-color: var(--action-color); padding: 20px; margin-bottom: 20vh;">
 
 #### Exercise 1.
 
@@ -586,7 +587,7 @@ The Git repository contains a time-series of commits. This time-series is called
 
 A repository can have more than one branch, but this makes it more difficult to manage. By convention the main branch of a repository is called `main`.
 
-<div style="background-color: var(--action-color); padding: 20px;">
+<div style="background-color: var(--action-color); padding: 20px; margin-top: 20vh; margin-bottom: 20vh;">
 
 #### Exercise 2.
 
