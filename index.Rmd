@@ -497,6 +497,6 @@ Keeping track of changes to documents:
 
 Programs can do this automatically for us (e.g., Google docs).
 
-### GitHug
+### GitHub
 
 
