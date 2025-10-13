@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Git(Hub)</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Reproducibility In Action</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="./reproducibility_half.html">Reproducibility</a>
+</li>
+<li>
+  <a href="./github_half.html">Git(Hub)</a>
+</li>
+<li>
+  <a href="./aboutTHEE.html">About THEE Research Practical 2025</a>
+</li>
+<li>
+  <a href="https://peischllab.github.io/people.html#ana-hermina-ghenu">About me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/EvoNerd">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Git(Hub)</h1>
+
+</div>
+
+
+<style>
+.body {
+  font-size: 36pt; /* or try 18pt, 20pt, etc. */
+}
+
+/* Increase vertical space between TOC items */
+.tocify-item.list-group-item {
+  padding-top: 12px;
+  padding-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Increase vertical space before a new header */
+.section h1 {
+    padding-top: 50vh; /* units: % of vertical height of the browser window */
+  }
+
+/* the source code is hard to see, let's make it bold */
+.sourceCode.r {
+  font-weight: bold;
+}
+
+/* define custom colours used for action blocks & buttons */
+  :root {
+    --action-color: #FFDF64;
+    --action-contrast: #877b66;
+  }
+</style>
+<div style="margin-top: -47vh;">
+
+</div>
+<div id="learning-goals" class="section level1">
+<h1>Learning Goals</h1>
+<ul>
+<li><p>What is Git &amp; how can I track my changes locally?</p></li>
+<li><p>What is GitHub &amp; how can I track my changes
+remotely?</p></li>
+<li><p>How are Git &amp; GitHub related to reproducibility
+practices?</p></li>
+</ul>
+</div>
+<div id="version-control" class="section level1">
+<h1>Version control</h1>
+<p>Keeping track of changes to documents:</p>
+<div align="center">
+<p><img
+src="https://swcarpentry.github.io/git-novice/fig/phd101212s.png"
+style="width:35.0%" /></p>
+</div>
+<p>Programs can do this automatically for us (e.g., Google docs).</p>
+<div style="margin-top: 10vh;">
+
+</div>
+<div id="what-is-git" class="section level2">
+<h2>What is Git?</h2>
+<div align="center">
+<p><img
+src="https://swcarpentry.github.io/git-novice/fig/play-changes.svg"
+style="width:90.0%" /></p>
+</div>
+<p style="font-size: 18px;">
+Git tracks changes to all files and subfolders contained in the
+<strong>repository</strong> (which is just the parent folder).
+</p>
+<p>For text files, Git lets you see line-by-line changes:<br />
+</p>
+<p align="center">
+<img src="figures/git_change_to_text_file.png" style="width:35.0%" />
+</p>
+<p>For non-text files, Git indicates that files were changed:<br />
+</p>
+<p align="center">
+<img src="figures/git_change_to_nontext_file.png"
+style="width:50.0%" />
+</p>
+<blockquote>
+<p>Git can be used locally on your computer<br />
+    <strong>AND</strong><br />
+Git can be synchronized with a server so that data &amp; changes are
+backed up to the cloud.</p>
+</blockquote>
+</div>
+</div>
+<div id="using-git-locally" class="section level1">
+<h1>Using Git Locally</h1>
+<p>Git can be run via command line (<a
+href="https://swcarpentry.github.io/git-novice/01-basics.html">see
+tutorial here</a>) but we will use GitHub Desktop.</p>
+<div id="exercise-1.-stash" class="section level2"
+style="background-color: var(--action-color); padding: 20px; margin-bottom: 20vh;">
+<h2>Exercise 1. Stash</h2>
+<ul>
+<li><p>Download and <strong>install GitHub Desktop</strong> at this
+link: <a
+href="https://github.com/apps/desktop">https://github.com/apps/desktop</a></p>
+<ul>
+<li><p>To complete the installation, you will also have to create an
+account on <a href="https://github.com/">GitHub.com</a>.</p></li>
+<li><p>After you make your GitHub account, authenticate GitHub Desktop
+by going to<br />
+<strong>File ➜ Options… ➜ Accounts ➜ Sign Into
+GitHub.com</strong></p></li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/git_setup_GitHub_Desktop.png" style="width:50.0%" />
+<br><br> <img src="figures/github_signin.png" style="width:30.0%" />
+<br><br> <img src="figures/github_signin2.png" style="width:25.0%" />
+</p>
+<ul>
+<li>Download this GitHub repository to your local computer: <a
+href="https://github.com/EvoNerd/THEE_2025reproducibility">EvoNerd/THEE_2025reproducibility</a><br />
+<strong>Add ➜ Clone repository… ➜ URL</strong></li>
+</ul>
+<p align="center">
+<img src="figures/git_clone_repo.png" style="width:35.0%" /> <br><br>
+<img src="figures/git_clone_repo_URL.png" style="width:60.0%" />
+</p>
+<ul>
+<li><p>Open the “THEE_2025reproducibility” folder locally on your
+computer (i.e., using File Explorer for Windows, or Finder for Mac).</p>
+<ul>
+<li><p>GitHub Desktop will probably save the repository to a folder in
+your Documents that is called “GitHub”.</p></li>
+<li><p>You can also navigate to the repository from the start page on
+GitHub Desktop</p></li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/git_navigate_to_directory.png"
+style="width:45.0%" />
+</p>
+<ul>
+<li><p>Copy the R Notebook file you created before the break to the new
+repository.</p>
+<ul>
+<li><strong>Do you see any changes on GitHub Desktop?</strong></li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/git_stash.png" style="width:40.0%" />
+</p>
+</div>
+<p>GitHub Desktop automatically detects all changes in a repository and
+adds them to the <strong>staging area</strong>.</p>
+<blockquote>
+<p>When you decide that you have completed a <strong>stash</strong> of
+work, then you <strong>commit</strong> the stash to the repository with
+a message.</p>
+</blockquote>
+<div align="center">
+<p><img
+src="https://swcarpentry.github.io/git-novice/fig/git-staging-area.svg"
+style="width:90.0%" /></p>
+</div>
+<p>The Git repository contains a time-series of commits. This
+time-series is called a <strong>branch</strong>.</p>
+<p>A repository can have more than one branch, but this makes it more
+difficult to manage. By convention the main branch of a repository is
+called <code>main</code>.</p>
+<div id="exercise-2.-commit" class="section level2"
+style="background-color: var(--action-color); padding: 20px; margin-top: 20vh; margin-bottom: 20vh;">
+<h2>Exercise 2. Commit</h2>
+<ul>
+<li><p>Navigate to the GitHub Desktop staging area and commit the R
+Notebook file you copy/pasted to the repository.</p>
+<ul>
+<li>GitHub Desktop may prompt you to push to origin or to create a fork
+– do <strong>NOT</strong> do either of those things at this time!</li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/git_commit.png" style="width:30.0%" />
+</p>
+<ul>
+<li>Rename the R Notebook file with your firstname and commit this
+change too.</li>
+</ul>
+<p align="center">
+<img src="figures/git_change_doc_name.png" style="width:30.0%" />
+</p>
+<ul>
+<li>Navigate to the history tab. Can you figure out how to tag the most
+recent commit?</li>
+</ul>
+<p align="center">
+<img src="figures/git_create_tag.png" style="width:40.0%" />
+</p>
+</div>
+<p>Some commits are especially important (<em>e.g.</em>, the last time
+your code worked properly, the version of your results that you
+presented for the final presentation, <em>etc.</em>)</p>
+<blockquote>
+<p><strong>Tags</strong> let you label these important commits.</p>
+</blockquote>
+<p>It’s easier to find and return to a tagged commit.</p>
+<div id="exercise-3.-revert" class="section level2"
+style="background-color: var(--action-color); padding: 20px; margin-top: 20vh; ">
+<h2>Exercise 3. Revert</h2>
+<ul>
+<li>Tag your most recent commit as
+<code>&lt;your firstname's&gt; code</code>.</li>
+</ul>
+<p align="center">
+<img src="figures/git_tag.png" style="width:30.0%" />
+</p>
+<ul>
+<li><p>Open your R Notebook file, delete all of its contents, and save
+the file. <em>Don’t worry! Git will be able to retrieve it for
+you!</em></p></li>
+<li><p>Commit the change.</p></li>
+</ul>
+<p align="center">
+<img src="figures/git_delete_file_contents.png" style="width:50.0%" />
+</p>
+<ul>
+<li><p>Navigate to the history tab. Can you figure out how to revert the
+changes made by the most recent commit?</p>
+<ul>
+<li><strong>What happens when you revert changes in
+commit?</strong></li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/git_revert_changes.png" style="width:60.0%" />
+<br><br> <img src="figures/git_reverted_change.png"
+style="width:30.0%" />
+</p>
+</div>
+</div>
+<div id="github-using-git-with-a-server" class="section level1">
+<h1>GitHub: Using Git with a Server</h1>
+<p>Google Docs lets us work collaboratively on the same document.</p>
+<p>GitHub pairs the functionality of Git with a server, so we can work
+collaboratively on the files in a repository.</p>
+<p>By considering each change (<strong>commit</strong>) to a repository
+as separate, Git can keep track of different versions of the same
+repository.</p>
+<p align="center">
+<img src="https://swcarpentry.github.io/git-novice/fig/versions.svg"
+style="width:50.0%" />
+</p>
+<p>Then, the different versions can be <strong>merged</strong> back
+together.</p>
+<p align="center">
+<img src="https://swcarpentry.github.io/git-novice/fig/merge.svg"
+style="width:50.0%" />
+</p>
+<blockquote>
+<p><em>Uploading</em> your local commits and merging them <em>to the
+server</em> is called <strong>pushing</strong>.</p>
+<p><em>Downloading</em> the most recent commits <em>from the server</em>
+and merging them locally is called <strong>pulling</strong>.</p>
+</blockquote>
+<p>You can also just <strong>fetch</strong>: ask Git to check if there
+are any new commits on the server. This will neither upload or download
+any changes from/to your local computer.</p>
+<div id="exercise-4.-push-pull" class="section level2"
+style="background-color: var(--action-color); padding: 20px; margin-top: 20vh; margin-bottom: 20vh;">
+<h2>Exercise 4. Push &amp; Pull</h2>
+<ul>
+<li>Send Hermina your GitHub username or email. You should soon receive
+an email invite to collaborate on the repository.</li>
+</ul>
+<p align="center">
+<img src="figures/github_invite_to_collab.png" style="width:60.0%" />
+<br><br> <img src="figures/github_invite_to_collab2.png"
+style="width:30.0%" />
+</p>
+<ul>
+<li><strong>Push</strong> your local changes to GitHub’s server by
+clicking “Push to Origin”.</li>
+</ul>
+<p align="center">
+<img src="figures/github_push.png" style="width:80.0%" />
+</p>
+<ul>
+<li>If you try to push but GitHub finds that your local computer does
+not have the latest commits, it will automatically ask you to
+<strong>pull</strong> so your local computer is up-to-date.</li>
+</ul>
+<p align="center">
+<img src="figures/github_fetch.png" style="width:60.0%" /> <br><br>
+<img src="figures/github_pull.png" style="width:80.0%" />
+</p>
+<ul>
+<li><p>Keep trying to push until you have successfully synchronized your
+R Notebook file with origin.</p></li>
+<li><p>Keep trying to fetch and pull until you have have downloaded all
+the R Notebook files of the whole class to your local computer.</p></li>
+<li><p>Check out how many tags we have now on the repository! You can
+easily find tagged commits via the GitHub website.</p></li>
+</ul>
+<p align="center">
+<img src="figures/github_tags.png" style="width:50.0%" />
+</p>
+</div>
+<p>For text documents, Git keeps track of changes based on the name and
+line number of a document.</p>
+<p>If different commits modify the same line of the same document, Git
+does not know how to merge. This creates a
+<strong>conflict</strong>.</p>
+<p align="center">
+<img src="https://swcarpentry.github.io/git-novice/fig/conflict.svg"
+style="width:90.0%" />
+</p>
+<p>Git(Hub) will try its best to automatically resolve conflicts for
+you. When it finds a conflict that it cannot figure out how you it
+should be resolved, it will ask you to resolve it manually.</p>
+<p>Committing your changes often and synchronizing them with the server
+reduces the likelihood of creating conflicts.</p>
+<div id="bonus-exercise-merging-conflicts" class="section level2"
+style="background-color: var(--action-color); padding: 20px; margin-top: 20vh;">
+<h2><em>Bonus Exercise</em> Merging Conflicts</h2>
+<ul>
+<li><p>Make a change to the R Notebook file called
+<code>reproducibility.Rmd</code>. Commit the change and push it to
+GitHub.</p>
+<ul>
+<li>Did this create a conflict or was Git able to merge it
+successfully?</li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/github_conflict.png" style="width:80.0%" />
+</p>
+<ul>
+<li><p>Keep making changes, committing, and pushing them until we create
+a conflict. Let’s practice together to merge the conflicts.</p></li>
+<li><p>Conflicts can be resolved by telling Git to use all the changes
+from one commit and drop all the changes from the other commit<br />
+<em>e.g., we can keep <strong>either</strong> the commit from local main
+<strong>or</strong> that from GitHub (origin/main)</em></p></li>
+</ul>
+<p align="center">
+<img src="figures/github_resolve_conflict_auto.png"
+style="width:80.0%" />
+</p>
+<ul>
+<li>If we want to keep some parts from <strong>both</strong> of the
+conflicting commits, we need to open the document in a code or text
+editor and manually resolve the conflict. Here’s what a conflict looks
+like in Visual Studio Code. It is resolved manually simply by clicking
+on the change you want to accept.</li>
+</ul>
+<p align="center">
+<img src="figures/github_resolve_conflict_manual.png"
+style="width:100.0%" />
+</p>
+<ul>
+<li><p>Conflicts are scary but we can easily manage them once we learn
+how 😌</p>
+<ul>
+<li><strong>How can you avoid conflicts?</strong></li>
+</ul></li>
+</ul>
+<p align="center">
+<img src="figures/github_resolved_conflict.png" style="width:60.0%" />
+</p>
+</div>
+</div>
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+<ul>
+<li><p>Automated version control is useful.</p>
+<ul>
+<li><p>You will have to use GitHub during the research
+practical</p></li>
+<li><p>(other options exist. Servers: <em>GitLab</em>. Programs:
+<em>mercurial, CVS, Subversion</em>.)</p></li>
+</ul></li>
+<li><p>Git can be used locally for version control.</p></li>
+<li><p>Git can be used with an online server (e.g., GitHub)</p>
+<ul>
+<li><p>we experimented with how GitHub helps backups &amp;
+collaboration</p></li>
+<li><p>GitHub can also be used to host &amp; distribute projects<br />
+<em>e.g., <a
+href="https://github.com/EvoNerd/THEE_2025reproducibility">this website
+is hosted on GitHub</a> on the branch called “website”</em></p></li>
+</ul></li>
+</ul>
+<div style="margin-top: 40vh;">
+
+</div>
+<ul>
+<li>Coupling Git with an online server makes reproducibility easy:</li>
+</ul>
+<div align="center">
+<p style="font-size: 24px;">
+<a href="reproducibility_half.html#3_Hoard_">Hoard</a>
+<img src="https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_t3BbtzxyAYqbfzPrSXHDX3IeUrRhU1jPOjjOAkW9k0k8IoG8cmFmbm09_SFb0YM7BZrY6Ji_JDYu9zrZQh1PYXO43WmHGH8S04Ib6NHl5UvVru5mKRtas-k50qmohmAw=s0-d" style="width: 20%; margin-left: 5vw;" />
+</p>
+</div>
+<div align="center">
+<p style="font-size: 24px;">
+<img src="https://assets.myket.ir/icons/large/com.appattitude.shareapp_f6f6c04e-10fb-4303-a952-0e783d3bfb38.png" style="width: 20%; margin-right: 5vw;" />
+<a href="reproducibility_half.html#4_Share_">Share</a>
+</p>
+</div>
+<div style="margin-top: 10vh;">
+
+</div>
+<ul>
+<li>How does GitHub help us with the other reproducibility
+principles?</li>
+</ul>
+<div align="center">
+<p style="font-size: 24px;">
+<a href="reproducibility_half.html#1_Annotate_">Annotate</a>
+<img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/1771/images/annotate.png" style="width: 20%; margin-left: 5vw;" />
+</p>
+</div>
+<div align="center">
+<p style="font-size: 24px;">
+<img src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/yo/f21e0c96-387b-4142-be2b-cb5da5fbc84f.png" style="width: 20%; margin-right: 5vw;" />
+<a href="reproducibility_half.html#2_Automate_">Automate</a>
+</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -2,6 +2,10 @@ name: "THEE2025"
 title: "Reproducibility In Action"
 type: inverse
 left:
+  - text: "Reproducibility"
+    href: ./reproducibility_half.html
+  - text: "Git(Hub)"
+    href: ./github_half.html
   - text: "About THEE Research Practical 2025"
     href: ./aboutTHEE.html
   - text: "About me"
