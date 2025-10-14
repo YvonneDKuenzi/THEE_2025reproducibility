@@ -339,6 +339,11 @@ print(results)
 ```
 
 **Use find+replace to change the name of the function from `get.multiples1to10` to a new name that you find more useful** (*e.g.,* easier to type, easier to understand, unique).
+
+- To do find+replace you can go to RStudio: **Edit ➜  Find...**
+
+- You can also use a hotkey to get to find+replace, for Windows: **Ctrl + F** *or* for Mac: **Cmd   + F**
+
 </div>
 
 
@@ -368,7 +373,7 @@ Return to the R Notebook that you last updated in Exercise 4.\
 Use this line of code to write your `results` to a comma separated values (.csv) file called "myResuts.csv":
 
 ```r
-write.csv(results, filename = "myResults.csv", row.names = FALSE)
+write.csv(results, file = "myResults.csv", row.names = FALSE)
 ```
 
 Do you think this is a good filename for your results? **Why or why not?**

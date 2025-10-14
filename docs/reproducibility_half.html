@@ -800,6 +800,13 @@ Notebook document that you created in Exercise 1.</p>
 <code>get.multiples1to10</code> to a new name that you find more
 useful</strong> (<em>e.g.,</em> easier to type, easier to understand,
 unique).</p>
+<ul>
+<li><p>To do find+replace you can go to RStudio: <strong>Edit ➜
+Find…</strong></p></li>
+<li><p>You can also use a hotkey to get to find+replace, for Windows:
+<strong>Ctrl + F</strong> <em>or</em> for Mac: <strong>Cmd +
+F</strong></p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -832,7 +839,7 @@ than just printing them to the console. (Why?)</p>
 <p>Return to the R Notebook that you last updated in Exercise 4.<br />
 Use this line of code to write your <code>results</code> to a comma
 separated values (.csv) file called “myResuts.csv”:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">write.csv</span>(results, <span class="at">filename =</span> <span class="st">&quot;myResults.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">write.csv</span>(results, <span class="at">file =</span> <span class="st">&quot;myResults.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>Do you think this is a good filename for your results? <strong>Why or
 why not?</strong></p>
 <p>You can store the parameter value in the filename by first using
