@@ -1,0 +1,54 @@
+---
+title: "R Notebook"
+author: "Julia Eggenschwiler-->who to ask about it"
+date: "14.10.2025-->when was it written"
+
+output:
+  html_document: default
+---
+attribution: i used ChatGPT in this code
+---
+
+# Annotate!
+
+#spaces it creates a title
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+# heading
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+```{r}
+# Annotate!
+plot(cars)
+# function to multiply integers from 1 to 10 by a parameter value
+multiplynumbers1to10 <- function(multiplier){
+   numbers <- 1:10
+   return(multiplier * numbers)
+}
+
+# display results for parameter value set to 3
+current_value <- 3
+results <- multiplynumbers1to10(multiplier = current_value)
+
+# print results to console
+print(results)
+setwd("C:/Users/julia/Documents/Unibe/Research Practical")
+the_filename <- paste("multiples1to10--multiplier", current_value, ".csv")
+print(the_filename)
+
+write.csv(results, file = "myResults", row.names = FALSE)
+
+
+
+
+# create filename for results indicating the parameter value that was used
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
