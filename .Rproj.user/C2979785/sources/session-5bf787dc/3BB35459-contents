@@ -322,6 +322,20 @@ Committing your changes often and synchronizing them with the server reduces the
 
 </div>
 
+<div style="margin-top: 20vh;"></div>
+
+## Ignoring files
+
+Some files are not useful to track but prone to creating conflicts:
+
+- *e.g.,* Files automatically created by your operating system, like`.DS_Store`, `Thumbs.db`, `.Trash`
+
+- *e.g.,* `.RHistory` files ([except for advanced users](https://www.geeksforgeeks.org/r-language/how-to-access-the-scriptsource-history-in-rstudio/))
+
+You can ignore these file types by going to GitHub Desktop:  **Repository   ➜  Repository Settings...  ➜   Ignored files** and typing in a list of the files or filetypes you want to Git to ignore.\
+(... and if that doesn't work, check out [this tutorial: link here.](https://docs.github.com/en/get-started/git-basics/ignoring-files))
+
+
 # Summary
 
 * Automated version control is useful.
