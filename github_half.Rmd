@@ -64,7 +64,7 @@ Programs can automatically track the changes made to a document (e.g., Google do
 ![](./figures/git_changes_versions.svg){width=90% title="Figure modified from https://swcarpentry.github.io/git-novice"}
 </div>
 
-<div style="margin-top: 10vh;"></div>
+<div style="margin-top: 20vh;"></div>
 
 ## What is Git?
 
@@ -232,15 +232,15 @@ It's easier to find and return to a tagged commit.
 
 # GitHub: Using Git with a Server
 
-Google Docs lets us work collaboratively on the same document.
+Google Docs lets us work collaboratively on the same document -- and so does Git!
 
-GitHub pairs the functionality of Git with a server, so we can work collaboratively on the files in a repository.
-
-By considering each change (**commit**) to a repository as separate, Git can keep track of different versions of the same repository.
+GitHub pairs the functionality of Git with a remote server, so we can work collaboratively on the files in a repository.
 
 <p align="center">
-![](https://swcarpentry.github.io/git-novice/fig/versions.svg){width=50%  title="Figure from https://swcarpentry.github.io/git-novice"}
+![](./figures/git_working_together.svg){width=60% title="Figure modified from https://swcarpentry.github.io/git-novice"}
 </p>
+
+By considering each change (**commit**) to a repository as separate, Git can keep track of different versions of the same repository even when they happen on different local computers.
 
 Then, the different versions can be **merged** back together.
 
@@ -249,7 +249,11 @@ Then, the different versions can be **merged** back together.
 </p>
 
 >*Uploading* your local commits and merging them *to the server* is called **pushing**.
->
+
+<p align="center">
+![](./figures/github_merge.svg){width=80% title="Figure modified from https://swcarpentry.github.io/git-novice"}
+</p>
+
 >*Downloading* the most recent commits *from the server* and merging them locally is called **pulling**.
 
 You can also just **fetch**: ask Git to check if there are any new commits on the server. This will neither upload or download any changes from/to your local computer.
