@@ -106,6 +106,95 @@
    x="45.299999"
    y="152"
    width="75.800003"
+   height="4" /><clipPath
+   id="SVGID_14_-5">
+				<rect
+   id="use7-1"
+   x="253.2"
+   y="21.4"
+   width="104"
+   height="131.2" />
+			</clipPath><clipPath
+   id="SVGID_16_-7">
+				<rect
+   id="use8-1"
+   x="253.2"
+   y="21.4"
+   width="104"
+   height="131.2" />
+			</clipPath><clipPath
+   id="SVGID_18_-1">
+				<rect
+   id="use9-5"
+   x="267.29999"
+   y="41.200001"
+   width="75.800003"
+   height="4"
+   style="stroke:#4b4b4f;stroke-width:1.31717;stroke-dasharray:none;stroke-opacity:0.803922" />
+			</clipPath><clipPath
+   id="SVGID_20_-2">
+				<rect
+   id="use10-7"
+   x="267.29999"
+   y="47.099998"
+   width="75.800003"
+   height="4" />
+			</clipPath><clipPath
+   id="SVGID_22_-6">
+				<rect
+   id="use14-1"
+   x="267.29999"
+   y="52.900002"
+   width="75.800003"
+   height="4"
+   style="stroke:#4b4b4f;stroke-width:1.31717;stroke-dasharray:none;stroke-opacity:0.803922" />
+			</clipPath><clipPath
+   id="SVGID_24_-4">
+				<rect
+   id="use15-2"
+   x="267.29999"
+   y="64.599998"
+   width="75.800003"
+   height="4"
+   style="stroke:#4b4b4f;stroke-width:1.31717;stroke-dasharray:none;stroke-opacity:0.803922" />
+			</clipPath><clipPath
+   clipPathUnits="userSpaceOnUse"
+   id="clipPath68"><rect
+     style="fill:none;stroke:#4b4b4f;stroke-width:1.27288;stroke-opacity:0.803922"
+     id="rect68"
+     width="70.100029"
+     height="106.73763"
+     x="-263.78964"
+     y="97.660995" /></clipPath><rect
+   id="rect1"
+   x="253.2"
+   y="21.4"
+   width="104"
+   height="131.2" /><rect
+   id="rect2"
+   x="253.2"
+   y="21.4"
+   width="104"
+   height="131.2" /><rect
+   id="rect3"
+   x="267.29999"
+   y="41.200001"
+   width="75.800003"
+   height="4" /><rect
+   id="rect4"
+   x="267.29999"
+   y="47.099998"
+   width="75.800003"
+   height="4" /><rect
+   id="rect5"
+   x="267.29999"
+   y="52.900002"
+   width="75.800003"
+   height="4" /><rect
+   id="rect6"
+   x="267.29999"
+   y="64.599998"
+   width="75.800003"
    height="4" /></defs>
 <style
    type="text/css"
@@ -141,9 +230,9 @@
    gridtolerance="10"
    guidetolerance="10"
    id="namedview203"
-   inkscape:current-layer="Layer_1"
-   inkscape:cx="173.20261"
-   inkscape:cy="173.52941"
+   inkscape:current-layer="g79"
+   inkscape:cx="18.292683"
+   inkscape:cy="174.08537"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-height="821"
@@ -151,7 +240,7 @@
    inkscape:window-width="1440"
    inkscape:window-x="-7"
    inkscape:window-y="-7"
-   inkscape:zoom="1.53"
+   inkscape:zoom="1.64"
    objecttolerance="10"
    pagecolor="#ffffff"
    showgrid="false"
@@ -1210,7 +1299,7 @@
      sodipodi:role="line"
      x="269.61942"
      y="137.10658"
-     id="tspan48-46"></tspan><tspan
+     id="tspan48-46" /><tspan
      sodipodi:role="line"
      x="269.61942"
      y="150.30661"
@@ -1249,4 +1338,6 @@
      sodipodi:role="line"
      x="269.51556"
      y="203.69479"
-     id="tspan51-7-9">commit</tspan></text></svg>
+     id="tspan51-7-9">commit</tspan></text><g
+   id="g79"
+   transform="translate(-261.51316,31.680084)" /></svg>
