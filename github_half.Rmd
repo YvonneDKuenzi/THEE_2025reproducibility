@@ -363,6 +363,12 @@ You can ignore these file types by going to GitHub Desktop:  **Repository   ➜ 
 
 # Summary
 
+<p align="center">
+![](./figures/github_flowchart.svg){width=60%}
+</p>
+
+<div style="margin-top: 10vh;"></div>
+
 * Automated version control is useful.
 
   - You will have to use GitHub during the research practical
